@@ -13,4 +13,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/SampleWebApiAspNetCore/out ./
 
+ENV ASPNETCORE_ENVIRONMENT=Development
+
 ENTRYPOINT ["dotnet", "SampleWebApiAspNetCore.dll"]
